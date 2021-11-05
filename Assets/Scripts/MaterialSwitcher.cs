@@ -8,14 +8,14 @@ public class MaterialSwitcher : MonoBehaviour
     [SerializeField] private Material sand;
     [SerializeField] private Material dirt;
 
-    private MeshRenderer renderer;
+    private MeshRenderer meshRenderer;
 
     private Waypoint waypoint;
     bool lastPlacable;
 
     private void Start()
     {
-        renderer = GetComponent<MeshRenderer>();
+        meshRenderer = GetComponent<MeshRenderer>();
         waypoint = GetComponentInParent<Waypoint>();
         lastPlacable = waypoint.IsPlaceable;
     }
@@ -27,9 +27,9 @@ public class MaterialSwitcher : MonoBehaviour
             lastPlacable = waypoint.IsPlaceable;
 
             if (lastPlacable)
-                renderer.material = sand;
+                meshRenderer.material = sand;
             else
-                renderer.material = dirt;
+                meshRenderer.material = dirt;
         }
     }
 }
