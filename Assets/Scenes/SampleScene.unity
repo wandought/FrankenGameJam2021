@@ -353,6 +353,10 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1105834345904645762, guid: 046917c681d17b44194577303bde1f1f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1105834345904645762, guid: 046917c681d17b44194577303bde1f1f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 40
       objectReference: {fileID: 0}
@@ -12035,7 +12039,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 865675694}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 63.4, y: 117.9, z: 11.1}
+  m_LocalPosition: {x: 63.4, y: 146.68, z: 20.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -25436,9 +25440,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2907634562393606266, guid: e92ef58f2b5dd1f4ba568d243377d911, type: 3}
+      propertyPath: movementSpeed
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2907634562393606267, guid: e92ef58f2b5dd1f4ba568d243377d911, type: 3}
+      propertyPath: towerCanBePlaced
+      value: 
+      objectReference: {fileID: 2100000, guid: 53206e5af24353948bd840815d31f099, type: 2}
+    - target: {fileID: 2907634562393606267, guid: e92ef58f2b5dd1f4ba568d243377d911, type: 3}
+      propertyPath: towerCanNotBePlaced
+      value: 
+      objectReference: {fileID: 2100000, guid: 0699511f3e378ad44adbd4ef39a850f7, type: 2}
     - target: {fileID: 2907634562393606269, guid: e92ef58f2b5dd1f4ba568d243377d911, type: 3}
       propertyPath: m_Name
       value: TestPlayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 8901539041908770670, guid: e92ef58f2b5dd1f4ba568d243377d911, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8901539041928142692, guid: e92ef58f2b5dd1f4ba568d243377d911, type: 3}
       propertyPath: m_AnchorMax.x
