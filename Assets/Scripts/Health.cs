@@ -26,6 +26,12 @@ public class Health : MonoBehaviour
 						{
 									Die();
 						}
+
+						if (Vector3.Distance(this.transform.position, Path.Instance.First.position) <= 0.1f)
+						{
+									currentHealth = maxHealth;
+									healthBar.SetMaxHealth(maxHealth);
+						}
 			}
 
 			public void TakeDamage(int damage)
@@ -39,13 +45,16 @@ public class Health : MonoBehaviour
 			{
 						currentHealth = maxHealth;
 						healthBar.SetMaxHealth(maxHealth);
+						healthBar.SetHealth(currentHealth);
+			}
+
+			private void OnEnable()
+			{
+						ResetHealth();
 			}
 
 			void Die()
 			{
-						// TODO Display defeat UI
-
-						//remove after defeat UI is implemented
 						this.gameObject.SetActive(false);
 			}
 
