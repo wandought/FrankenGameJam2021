@@ -44,6 +44,7 @@ public class TowerPlacement : MonoBehaviour
         }
         else if (placementMode && Input.GetMouseButtonDown(0))
         {
+            
             PlaceTower();
         }
 
