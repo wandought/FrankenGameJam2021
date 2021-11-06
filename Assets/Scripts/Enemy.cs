@@ -2,9 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Health))]
 public class Enemy : MonoBehaviour
 {
+    private Health health;
+    public int Health { get { return health.CurrentHealth; } }
     private float speed = 2f;
+
+    private void Start()
+    {
+        health = GetComponent<Health>();
+    }
 
     private IEnumerator Move()
     {
@@ -22,19 +30,20 @@ public class Enemy : MonoBehaviour
                 yield return new WaitForEndOfFrame();
             }
         }
-        Player.Instance.TakeDamage(Player.Instance.MaxHealth);
+        Player.Instance.Health = 0;
         this.gameObject.SetActive(false);
         transform.position = Path.Instance.First.position;
     }
 
     private void OnEnable()
     {
-						transform.position = Path.Instance.First.position;
-					 this.GetComponent<Health>().ResetHealth();
-						StartCoroutine(Move());
+        transform.position = Path.Instance.First.position;
+        this.GetComponent<Health>().ResetHealth();
+        StartCoroutine(Move());
     }
-			private void OnDisable()
-			{
-						StopCoroutine(Move());
-			}
+
+    private void OnDisable()
+    {
+        StopCoroutine(Move());
+    }
 }
