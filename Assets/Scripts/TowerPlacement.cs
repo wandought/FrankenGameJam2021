@@ -17,7 +17,7 @@ public class TowerPlacement : MonoBehaviour
         }
         else if (placementMode && Input.GetMouseButtonDown(1))
         {
-            RemovePreview();
+            RemoveTower();
         }
         else if (placementMode && Input.GetMouseButtonDown(0))
         {
@@ -55,6 +55,7 @@ public class TowerPlacement : MonoBehaviour
 
     private void RemoveTower()
     {
+        RemovePreview();
         Vector2 playerPosition = new Vector2(transform.position.x, transform.position.z);
         Vector2 mousePosition = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
 

@@ -12158,7 +12158,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 865675694}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 47.63, z: -0.2}
+  m_LocalPosition: {x: 63.4, y: 117.9, z: 11.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -26208,6 +26208,8 @@ GameObject:
   - component: {fileID: 2080300046}
   - component: {fileID: 2080300047}
   - component: {fileID: 2080300048}
+  - component: {fileID: 2080300049}
+  - component: {fileID: 2080300050}
   m_Layer: 0
   m_Name: Adminstrator
   m_TagString: Untagged
@@ -26247,6 +26249,7 @@ MonoBehaviour:
   - {fileID: 1564983890503249835, guid: fb545e3ac9975774aba5b097e2c475bf, type: 3}
   - {fileID: 153255578302539355, guid: b21f833a13c0cb54bbbfa43643fa3209, type: 3}
   - {fileID: 6786330626285376587, guid: bd5f0451449400a4b8778f9f124ea852, type: 3}
+  - {fileID: 1061948296774527225, guid: d17353921b9731142b5076e409333c17, type: 3}
 --- !u!114 &2080300048
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26260,6 +26263,76 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   runtimeParent: {fileID: 1051853046}
+--- !u!114 &2080300049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2080300045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1f08f40283e3a14e9c02fe94ca7f876, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyTypes:
+  - {fileID: 8660296937213827675, guid: ada538eb2eba4124692acf9bdabb008a, type: 3}
+  - {fileID: 62779306198612430, guid: da4b93d0b29f38540bd8ea0798c7a139, type: 3}
+  wave: []
+--- !u!114 &2080300050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2080300045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75752107116972f4d96f00099d7b8a03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  path:
+  - {fileID: 531029927}
+  - {fileID: 1387942149}
+  - {fileID: 696910379}
+  - {fileID: 2054616511}
+  - {fileID: 386010506}
+  - {fileID: 1934536475}
+  - {fileID: 1589446550}
+  - {fileID: 1769798085}
+  - {fileID: 1513960587}
+  - {fileID: 633734918}
+  - {fileID: 1793326426}
+  - {fileID: 1766366714}
+  - {fileID: 2085271904}
+  - {fileID: 1835625926}
+  - {fileID: 435790633}
+  - {fileID: 623378159}
+  - {fileID: 702009354}
+  - {fileID: 1554849815}
+  - {fileID: 462621837}
+  - {fileID: 1929904277}
+  - {fileID: 429224263}
+  - {fileID: 547488778}
+  - {fileID: 52129142}
+  - {fileID: 163090637}
+  - {fileID: 1209227995}
+  - {fileID: 1850492707}
+  - {fileID: 1933853946}
+  - {fileID: 548826306}
+  - {fileID: 1209150467}
+  - {fileID: 219260898}
+  - {fileID: 1267175476}
+  - {fileID: 1058564136}
+  - {fileID: 1450768563}
+  - {fileID: 1492645106}
+  - {fileID: 1855652883}
+  - {fileID: 1436724171}
+  - {fileID: 1954233258}
+  - {fileID: 544523936}
+  - {fileID: 16306210}
+  - {fileID: 197837073}
+  - {fileID: 2122752294}
 --- !u!1001 &2085271903
 PrefabInstance:
   m_ObjectHideFlags: 0
