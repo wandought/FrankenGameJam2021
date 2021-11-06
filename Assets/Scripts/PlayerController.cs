@@ -9,10 +9,12 @@ public class PlayerController : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-	  float verticalMovement = Input.GetAxisRaw("Vertical") * movementSpeed;
-	  float horizontalMovement = Input.GetAxisRaw("Horizontal") * movementSpeed;
+		float verticalMovement = Input.GetAxisRaw("Vertical") * movementSpeed;
+		float horizontalMovement = Input.GetAxisRaw("Horizontal") * movementSpeed;
+		
+		transform.Translate(new Vector3(horizontalMovement, 0f, verticalMovement));
 
-	  transform.Translate(new Vector3(horizontalMovement, 0f, verticalMovement));
-	  
+		if (Input.GetKeyDown(KeyCode.R))
+			WaveManager.Instance.SetReady();
 	}
 }

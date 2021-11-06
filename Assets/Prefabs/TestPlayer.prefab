@@ -111,7 +111,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93491cb09c5626b478df4a3b7a68aedb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  placementRange: 100
+  towerSelection: {fileID: 8286186949645407169, guid: 0dc2fdb4a67d6024cb1d6e5d77418aa2, type: 3}
+  placementRange: 15
   towerCanBePlaced: {fileID: 0}
   towerCanNotBePlaced: {fileID: 0}
 --- !u!114 &2907634562393606266

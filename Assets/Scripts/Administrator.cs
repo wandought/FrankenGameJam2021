@@ -10,11 +10,13 @@ public class Administrator : MonoBehaviour
     public static Administrator Instance { get { return instance; } }
     public static float GridSize { get { return 0.25f; } }
 
-    [SerializeField] private Transform runtimeParent;
+    private Transform runtimeParent;
     public Transform RuntimeParent { get { return runtimeParent; } }
 
-    public TowerSelection towerSelection;
-    public Dictionary<int, Waypoint> waypoints;
+    private TowerSelection towerSelection;
+    public TowerSelection TowerSelection { get { return towerSelection; } }
+    private Dictionary<int, Waypoint> waypoints;
+    public Dictionary<int, Waypoint> Waypoints { get { return waypoints; } }
     private Dictionary<int, BasicTower> towers;
 
     private void Awake()
@@ -30,6 +32,9 @@ public class Administrator : MonoBehaviour
         towerSelection = GetComponent<TowerSelection>();
         waypoints = new Dictionary<int, Waypoint>();
         towers = new Dictionary<int, BasicTower>();
+
+        GameObject collection = new GameObject("Runtime Object Collection");
+        runtimeParent = collection.transform;
     }
 
     public GameObject CurrentTower()

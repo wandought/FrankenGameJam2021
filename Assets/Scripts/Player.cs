@@ -2,12 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(PlayerController))]
 public class Player : MonoBehaviour
 {
-    public int maxHealth = 100;
-    public int currentHealth;
+    private static Player instance;
+    public static Player Instance { get { return instance; } }
+
+    [SerializeField] private int maxHealth = 100;
+    public int MaxHealth { get { return maxHealth; } }
+
+    [SerializeField] private int currentHealth;
+    public int CurrentHealth { get { return currentHealth; } }
 
     public HealthBar healthBar;
+
+    private void Awake()
+    {
+        if (instance != null && instance != this)
+            Destroy(this.gameObject);
+        else
+            instance = this;
+    }
 
     void Start()
     {
@@ -28,16 +43,24 @@ public class Player : MonoBehaviour
         }
     }
 
-    void TakeDamage(int damage)
+    public void TakeDamage(int damage)
     {
         currentHealth -= damage;
 
         healthBar.SetHealth(currentHealth);
     }
 
+    //Maybe for health pickups
+    private void GainHealth(int amount)
+    {
+        currentHealth = (currentHealth + amount) % (maxHealth + 1);
+    }
+
     void Die()
     {
-        // TODO this is probably stupid
+        // TODO Display defeat UI
+
+        //remove after defeat UI is implemented
         Destroy(this.gameObject);
         Destroy(this.healthBar.gameObject);
     }
