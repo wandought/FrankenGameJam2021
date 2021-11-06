@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] private float speed = 1f;
+    private float speed = 2f;
 
-    public IEnumerator Move()
+    private IEnumerator Move()
     {
         foreach (Transform trans in Path.Instance.GetPath())
         {
@@ -22,5 +22,13 @@ public class Enemy : MonoBehaviour
                 yield return new WaitForEndOfFrame();
             }
         }
+        Player.Instance.TakeDamage(Player.Instance.MaxHealth);
+        this.gameObject.SetActive(false);
+        transform.position = Path.Instance.First.position;
+    }
+
+    private void OnEnable()
+    {
+        StartCoroutine(Move());
     }
 }
