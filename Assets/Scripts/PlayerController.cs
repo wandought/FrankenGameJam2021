@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
 	  float verticalMovement = Input.GetAxisRaw("Vertical") * movementSpeed;
 	  float horizontalMovement = Input.GetAxisRaw("Horizontal") * movementSpeed;
 
-	  transform.Translate(new Vector3(horizontalMovement, verticalMovement, 0f));
+	  transform.Translate(new Vector3(horizontalMovement, 0f, verticalMovement));
 	  
 	}
 }
