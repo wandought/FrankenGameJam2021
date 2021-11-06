@@ -989,7 +989,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 313772eddcd07764f9bd1e88d4d9b8e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 0.04
+  movementSpeed: 0.5
 --- !u!114 &102324309
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1002,7 +1002,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93491cb09c5626b478df4a3b7a68aedb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  placementRange: 100
+  placementRange: 40
 --- !u!65 &102324310
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1014,7 +1014,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 0.95, y: 5.5, z: 0.95}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &102324311
 MeshRenderer:
@@ -12158,7 +12158,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 865675694}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 47.63, z: -0.2}
+  m_LocalPosition: {x: 0, y: 132.94, z: -0.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -26260,6 +26260,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   runtimeParent: {fileID: 1051853046}
+  towerSelection: {fileID: 0}
 --- !u!1001 &2085271903
 PrefabInstance:
   m_ObjectHideFlags: 0

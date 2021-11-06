@@ -12,8 +12,8 @@ public class Administrator : MonoBehaviour
 
     [SerializeField] private Transform runtimeParent;
 
-    private TowerSelection towerSelection;
-    private Dictionary<int, Waypoint> waypoints;
+    public TowerSelection towerSelection;
+    public Dictionary<int, Waypoint> waypoints;
     private Dictionary<int, BasicTower> towers;
 
     private void Awake()
