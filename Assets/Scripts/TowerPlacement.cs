@@ -34,7 +34,11 @@ public class TowerPlacement : MonoBehaviour
 						}
 						else if (placementMode && Input.GetMouseButtonDown(1))
 						{
+
 									RemovePreview();
+
+									RemoveTower();
+
 						}
 						else if (placementMode && Input.GetMouseButtonDown(0))
 						{
@@ -82,7 +86,7 @@ public class TowerPlacement : MonoBehaviour
 									Waypoint tile;
 									if (!Administrator.Instance.waypoints.TryGetValue(key, out tile) || tile.IsPlaceable == true
 												&& Vector2.Distance(playerPosition, new Vector2(x, z)) <= placementRange)
-						
+
 									{
 												// Make Blue
 												previewTower.transform.Find("TowerHead").GetComponent<MeshRenderer>().sharedMaterials = towerHeadCanBePlacedMatCount;
