@@ -15,7 +15,7 @@ public class Administrator : MonoBehaviour
 
     private TowerSelection towerSelection;
     private Dictionary<int, Waypoint> waypoints;
-    private List<BasicTower> towers;
+    private Dictionary<int, BasicTower> towers;
 
     private void Awake()
     {
@@ -29,7 +29,7 @@ public class Administrator : MonoBehaviour
     {
         towerSelection = GetComponent<TowerSelection>();
         waypoints = new Dictionary<int, Waypoint>();
-        towers = new List<BasicTower>();
+        towers = new Dictionary<int, BasicTower>();
     }
 
     public GameObject CurrentTower()
@@ -39,9 +39,9 @@ public class Administrator : MonoBehaviour
 
     public bool RegisterWaypoint(Waypoint waypoint)
     {
+        Vector2 coordinate = new Vector2(waypoint.transform.position.x, waypoint.transform.position.z);
         try
         {
-            Vector2 coordinate = new Vector2(waypoint.transform.position.x, waypoint.transform.position.z);
             waypoints.Add(CoordinateCalculator.CoordinateToInt(coordinate), waypoint);
             return true;
         }
@@ -59,8 +59,9 @@ public class Administrator : MonoBehaviour
         x *= 10;
         z *= 10;
 
+        int key = CoordinateCalculator.CoordinateToInt(x, z);
         Waypoint tile;
-        if (!waypoints.TryGetValue(CoordinateCalculator.CoordinateToInt(x, z), out tile)
+        if (!waypoints.TryGetValue(key, out tile)
             || tile.IsPlaceable == false)
             return false;
 
@@ -70,7 +71,26 @@ public class Administrator : MonoBehaviour
             Quaternion.identity,
             runtimeParent);
 
-        towers.Add(tower.GetComponent<BasicTower>());
+        towers.Add(key, tower.GetComponent<BasicTower>());
         return true;
+    }
+
+    public bool RemoveTower(Vector3 position)
+    {
+        int key = CoordinateCalculator.CoordinateToInt(
+            CoordinateCalculator.RawCoordinatesToTileCoordinates(position));
+        Waypoint waypoint;
+
+        if (!waypoints.TryGetValue(key, out waypoint))
+            return false;
+
+        waypoints[key].IsPlaceable = true;
+
+        BasicTower tower;
+        if (!towers.TryGetValue(key, out tower))
+            return false;
+
+        Destroy(tower.gameObject);
+        return towers.Remove(key);
     }
 }

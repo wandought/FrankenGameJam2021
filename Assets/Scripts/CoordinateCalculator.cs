@@ -30,4 +30,25 @@ public static class CoordinateCalculator
 
         return 1000 * x + y;
     }
+
+    public static Vector2 RawCoordinatesToTileCoordinates(float x, float y)
+    {
+        x = Mathf.RoundToInt(x / 10);
+        y = Mathf.RoundToInt(y / 10);
+
+        x *= 10;
+        y *= 10;
+
+        return new Vector2(x, y);
+    }
+
+    public static Vector2 RawCoordinatesToTileCoordinates(Vector2 coord)
+    {
+        return RawCoordinatesToTileCoordinates(coord.x, coord.y);
+    }
+
+    public static Vector2 RawCoordinatesToTileCoordinates(Vector3 coord)
+    {
+        return RawCoordinatesToTileCoordinates(coord.x, coord.z);
+    }
 }
