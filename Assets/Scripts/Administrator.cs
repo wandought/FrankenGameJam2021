@@ -9,6 +9,7 @@ public class Administrator : MonoBehaviour
     private static Administrator instance;
     public static Administrator Instance { get { return instance; } }
     public static float GridSize { get { return 0.25f; } }
+    public static float TileSize { get { return 10f; } }
 
     [SerializeField] private Transform runtimeParent;
 
@@ -52,16 +53,18 @@ public class Administrator : MonoBehaviour
 
     public bool PlaceTower(Vector3 position)
     {
-        Debug.Log(UnityEditor.EditorSnapSettings.move.x);
-        int x = Mathf.RoundToInt(position.x);
-        int z = Mathf.RoundToInt(position.z);
+        int x = Mathf.RoundToInt(position.x / 10);
+        int z = Mathf.RoundToInt(position.z / 10);
 
-        //Waypoint tile;
-        //if (!waypoints.TryGetValue(CoordinateCalculator.CoordinateToInt(x, z), out tile)
-        //    || tile.IsPlaceable == false)
-        //    return false;
+        x *= 10;
+        z *= 10;
 
-        //tile.IsPlaceable = false;
+        Waypoint tile;
+        if (!waypoints.TryGetValue(CoordinateCalculator.CoordinateToInt(x, z), out tile)
+            || tile.IsPlaceable == false)
+            return false;
+
+        tile.IsPlaceable = false;
         GameObject tower = Instantiate(towerSelection.CurrentTower,
             new Vector3(x, position.y, z),
             Quaternion.identity,
