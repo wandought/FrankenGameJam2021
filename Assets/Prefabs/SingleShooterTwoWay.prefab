@@ -124,15 +124,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6ff8df5d57d71b0409a4d384f3e97e85, type: 3}
       propertyPath: m_LocalScale.x
-      value: 9.5
+      value: 7.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6ff8df5d57d71b0409a4d384f3e97e85, type: 3}
       propertyPath: m_LocalScale.y
-      value: 9.5
+      value: 7.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6ff8df5d57d71b0409a4d384f3e97e85, type: 3}
       propertyPath: m_LocalScale.z
-      value: 9.5
+      value: 7.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6ff8df5d57d71b0409a4d384f3e97e85, type: 3}
       propertyPath: m_LocalPosition.x
@@ -176,7 +176,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 6ff8df5d57d71b0409a4d384f3e97e85, type: 3}
       propertyPath: m_Name
-      value: Tower Head Single 2 Dir
+      value: TowerHead
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6ff8df5d57d71b0409a4d384f3e97e85, type: 3}
@@ -275,15 +275,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2754176b635779a4fbc44c6840ab56f8, type: 3}
       propertyPath: m_LocalScale.x
-      value: 9.5
+      value: 7.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2754176b635779a4fbc44c6840ab56f8, type: 3}
       propertyPath: m_LocalScale.y
-      value: 9.5
+      value: 7.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2754176b635779a4fbc44c6840ab56f8, type: 3}
       propertyPath: m_LocalScale.z
-      value: 9.5
+      value: 7.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2754176b635779a4fbc44c6840ab56f8, type: 3}
       propertyPath: m_LocalPosition.x
