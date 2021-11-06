@@ -4,20 +4,20 @@ using UnityEngine;
 
 public class BasicTower : MonoBehaviour
 {
-    public float xAngle, yAngle, zAngle;
+    public float degreesPerSecond = 0f;
 
     private GameObject towerHead;
 
     // Start is called before the first frame update
     void Start()
     {
-        this.towerHead = this.transform.Find("Tower Head").gameObject;
+        this.towerHead = this.transform.Find("TowerHead").gameObject;
     }
 
     // Update is called once per frame
-    void Update()
+    void Update()   
     {
-        this.towerHead.transform.Rotate(xAngle, yAngle, zAngle, Space.World);
+        this.towerHead.transform.Rotate(0, degreesPerSecond * Time.deltaTime, 0, Space.World);
     }
 }
 
