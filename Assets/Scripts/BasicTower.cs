@@ -8,6 +8,8 @@ public class BasicTower : MonoBehaviour
 
     public int damagePerBullet = 5;
 
+    public int price = 350;
+
     private GameObject towerHead;
 
     // Start is called before the first frame update
