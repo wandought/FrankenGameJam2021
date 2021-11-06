@@ -4,20 +4,67 @@ using UnityEngine;
 
 public class TowerSelection : MonoBehaviour
 {
-    [SerializeField] private GameObject[] towers;
-    private int currentTower = 0;
-    public GameObject CurrentTower { get { return towers.Length > 0 ? towers[currentTower] : null; } }
+			[SerializeField] private GameObject[] towers;
+			private int currentTower = 0;
+			public GameObject CurrentTower
+			{
+						get
+						{
+									return towers.Length > 0 ? towers[currentTower] : null;
+						}
+			}
 
-    private void Update()
-    {
-        if (towers.Length == 0)
-            return;
-        else if (Input.mouseScrollDelta.y > Mathf.Epsilon)
-            currentTower = (currentTower + 1) % towers.Length;
-        else if (Input.mouseScrollDelta.y < -Mathf.Epsilon)
-            if (currentTower == 0)
-                currentTower = towers.Length - 1;
-            else
-                currentTower--;
-    }
+			public delegate void CurTowerChangedDelegate(GameObject newTower);
+			public static event CurTowerChangedDelegate CurTowerChangedEvent;
+
+
+			private void Update()
+			{
+						if (towers.Length == 0)
+									return;
+						else if (Input.mouseScrollDelta.y > Mathf.Epsilon)
+						{
+
+
+									currentTower = (currentTower + 1) % towers.Length;
+									CurTowerChangedEvent(towers[currentTower]);
+						}
+						else if (Input.mouseScrollDelta.y < -Mathf.Epsilon)
+									if (currentTower == 0)
+									{
+												currentTower = towers.Length - 1;
+												CurTowerChangedEvent(towers[currentTower]);
+									}
+									else
+									{
+												currentTower--;
+												CurTowerChangedEvent(towers[currentTower]);
+									}
+			}
 }
+
+/*
+ * 
+	*  public delegate void HealthChangedDelegate(float oldV, float newV);
+  public event HealthChangedDelegate HealthChangedEvent;
+
+
+Invoke:
+  //Code
+  HealthChangedEvent(oldV, newV);
+  //Code
+
+Listen:
+  //Code
+  HealthChangedEvent += new HealthChangedDelegate(<method to be Invoked>);
+  //Code
+
+  private void onDeath(float oldV, float newV);
+  {
+  // DO STUFF
+  }
+
+	* 
+	* 
+	* 
+ * */

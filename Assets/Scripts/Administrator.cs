@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-[RequireComponent(typeof(TowerSelection))]
+[RequireComponent(typeof(TowerSelection))] [RequireComponent(typeof(WaveManager))] [RequireComponent(typeof(ApplicationQuit))]
 public class Administrator : MonoBehaviour
 {
     private static Administrator instance;
@@ -11,9 +11,10 @@ public class Administrator : MonoBehaviour
     public static float GridSize { get { return 0.25f; } }
 
     [SerializeField] private Transform runtimeParent;
+    public Transform RuntimeParent { get { return runtimeParent; } }
 
-    private TowerSelection towerSelection;
-    private Dictionary<int, Waypoint> waypoints;
+    public TowerSelection towerSelection;
+    public Dictionary<int, Waypoint> waypoints;
     private Dictionary<int, BasicTower> towers;
 
     private void Awake()
