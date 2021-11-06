@@ -52,4 +52,15 @@ public class TowerPlacement : MonoBehaviour
 
         RemovePreview();
     }
+
+    private void RemoveTower()
+    {
+        Vector2 playerPosition = new Vector2(transform.position.x, transform.position.z);
+        Vector2 mousePosition = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
+
+        Ray ray = Camera.main.ScreenPointToRay(mousePosition);
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit))
+            Administrator.Instance.RemoveTower(hit.point);
+    }
 }
