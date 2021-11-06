@@ -1,12 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 [RequireComponent(typeof(PlayerController))]
 public class TowerPlacement : MonoBehaviour
 {
     [SerializeField] private float placementRange = 20f;
-
     private GameObject previewTower = null;
 
     private bool placementMode = false;
@@ -30,7 +30,7 @@ public class TowerPlacement : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) && !placementMode)
         {
             DisplayPreview();
         }
@@ -75,8 +75,6 @@ public class TowerPlacement : MonoBehaviour
 
     private void PlacePreview()
     {
-
-
         Vector2 playerPosition = new Vector2(transform.position.x, transform.position.z);
         Vector2 mousePosition = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
 

@@ -24,11 +24,15 @@ public class Enemy : MonoBehaviour
         }
         Player.Instance.TakeDamage(Player.Instance.MaxHealth);
         this.gameObject.SetActive(false);
-        transform.position = Path.Instance.First.position;
     }
 
     private void OnEnable()
     {
-        StartCoroutine(Move());
+						transform.position = Path.Instance.First.position;
+						StartCoroutine(Move());
     }
+			private void OnDisable()
+			{
+						StopCoroutine(Move());
+			}
 }

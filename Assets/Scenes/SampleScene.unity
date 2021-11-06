@@ -26229,8 +26229,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fef68f0b462bf51499724607ad189dd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  runtimeParent: {fileID: 1051853046}
-  towerSelection: {fileID: 0}
 --- !u!114 &2080300049
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26246,7 +26244,8 @@ MonoBehaviour:
   enemyTypes:
   - {fileID: 8660296937213827675, guid: ada538eb2eba4124692acf9bdabb008a, type: 3}
   - {fileID: 62779306198612430, guid: da4b93d0b29f38540bd8ea0798c7a139, type: 3}
-  wave: []
+  enemyCounts: 05000000020000000a000000
+  enemySpawnDelay: 0.333
 --- !u!114 &2080300050
 MonoBehaviour:
   m_ObjectHideFlags: 0
