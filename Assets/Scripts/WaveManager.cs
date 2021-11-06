@@ -59,12 +59,8 @@ public class WaveManager : MonoBehaviour
 						{
 									foreach (Enemy e in wave)
 									{
-												if (e != null)
-												{
-															if (e.gameObject.activeInHierarchy)
-																		return;
-												}
-												
+												if (e.gameObject.activeInHierarchy)
+															return;
 									}
 									active = false;
 									ready = false;
@@ -90,7 +86,6 @@ public class WaveManager : MonoBehaviour
 									{
 												active = true;
 												wave[i].gameObject.SetActive(true);
-												wave[i].transform.position = Path.Instance.First.transform.position;
 												yield return new WaitForSeconds(enemySpawnDelay);
 									}
 									nextWave++;
