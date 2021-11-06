@@ -4,37 +4,20 @@ using UnityEngine;
 
 public class BasicTower : MonoBehaviour
 {
+    public float xAngle, yAngle, zAngle;
 
-    [SerializeField] private GameObject[] bulletSpawner;
-    [SerializeField] private GameObject projectile;
-    [SerializeField] private float shootEveryXSeconds;
-    private float counter;
+    private GameObject towerHead;
 
     // Start is called before the first frame update
     void Start()
     {
-        if (bulletSpawner == null)
-        {
-            Debug.Log("ERROR: bulletSpawns[] empty!");
-        }
-
-        counter = shootEveryXSeconds;
-
+        this.towerHead = this.transform.Find("TowerHead").gameObject;
     }
 
     // Update is called once per frame
     void Update()
     {
-        counter -= Time.deltaTime;
-        if (counter >= 0f)
-            return;
-
-        foreach (GameObject spawner in bulletSpawner)
-        {
-            Instantiate(projectile, spawner.transform.position, spawner.transform.rotation);
-            counter += shootEveryXSeconds;
-        }
-
+        this.towerHead.transform.Rotate(xAngle, yAngle, zAngle, Space.World);
     }
 }
 
