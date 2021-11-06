@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BasicTower : MonoBehaviour
 {
-    public float xAngle, yAngle, zAngle;
+    public float degreesPerSecond = 0f;
 
     private GameObject towerHead;
 
@@ -15,9 +15,9 @@ public class BasicTower : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void Update()   
     {
-        this.towerHead.transform.Rotate(xAngle, yAngle, zAngle, Space.World);
+        this.towerHead.transform.Rotate(0, degreesPerSecond * Time.deltaTime, 0, Space.World);
     }
 }
 
