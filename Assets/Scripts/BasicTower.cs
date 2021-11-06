@@ -11,7 +11,7 @@ public class BasicTower : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        this.towerHead = this.transform.Find("TowerHead").gameObject;
+        this.towerHead = this.transform.Find("Tower Head").gameObject;
     }
 
     // Update is called once per frame
