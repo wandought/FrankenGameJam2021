@@ -6,9 +6,6 @@ using UnityEngine;
 public class TowerPlacement : MonoBehaviour
 {
     [SerializeField] private float placementRange = 20f;
-    [SerializeField] TowerSelection selection;
-
-    [SerializeField] Transform parent;
 
     private bool placementMode = false;
 
@@ -51,7 +48,7 @@ public class TowerPlacement : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit))
             if (Vector2.Distance(playerPosition, new Vector2(hit.point.x, hit.point.y)) <= placementRange)
-                Instantiate(selection.CurrentTower, hit.point, Quaternion.identity, parent);
+                Administrator.Instance.PlaceTower(hit.point);
 
         RemovePreview();
     }
