@@ -12,12 +12,12 @@ public class TowerSelection : MonoBehaviour
     {
         if (towers.Length == 0)
             return;
-        else if (Input.mouseScrollDelta.y < -Mathf.Epsilon)
-            if (currentTower == 0)
-                currentTower = towers.Length;
-            else
-                currentTower--;
         else if (Input.mouseScrollDelta.y > Mathf.Epsilon)
             currentTower = (currentTower + 1) % towers.Length;
+        else if (Input.mouseScrollDelta.y < -Mathf.Epsilon)
+            if (currentTower == 0)
+                currentTower = towers.Length - 1;
+            else
+                currentTower--;
     }
 }
