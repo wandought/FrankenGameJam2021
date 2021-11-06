@@ -21,6 +21,8 @@ public class TowerPlacement : MonoBehaviour
 			private Material[] towerStandCanBePlacedMatCount;
 			private Material[] towerStandCanNotBePlacedMatCount;
 
+			private float yRotationEuler = 0f;
+
 			private void Start()
 			{
 						TowerSelection.CurTowerChangedEvent += new TowerSelection.CurTowerChangedDelegate(updateMesh);
@@ -47,6 +49,11 @@ public class TowerPlacement : MonoBehaviour
 
 						if (placementMode)
 						{
+									if (Input.GetKeyDown(KeyCode.R))
+									{
+												yRotationEuler += 90f;
+												previewTower.transform.rotation = Quaternion.Euler(0f, yRotationEuler, 0f);
+									}
 									PlacePreview();
 						}
 			}
@@ -101,6 +108,7 @@ public class TowerPlacement : MonoBehaviour
 									// new pos
 
 									previewTower.transform.position = new Vector3(x, 0f, z);
+									
 						}
 
 			}
@@ -125,7 +133,7 @@ public class TowerPlacement : MonoBehaviour
 									x *= 10;
 									z *= 10;
 
-									previewTower = Instantiate(Administrator.Instance.towerSelection.CurrentTower, new Vector3(x, hit.point.y, z), Quaternion.identity, null);
+									previewTower = Instantiate(Administrator.Instance.towerSelection.CurrentTower, new Vector3(x, hit.point.y, z), Quaternion.Euler(rotation.x, rotation.y, rotation.z), null);
 
 									foreach (Transform item in previewTower.transform.Find("TowerHead")) // < bad
 									{
@@ -157,6 +165,7 @@ public class TowerPlacement : MonoBehaviour
 						Debug.Log("Placement Mode off");
 						placementMode = false;
 						Destroy(previewTower);
+						yRotationEuler = 0f;
 			}
 
 			private void PlaceTower()
@@ -172,7 +181,8 @@ public class TowerPlacement : MonoBehaviour
 						{
 									if (Vector2.Distance(playerPosition, new Vector2(hit.point.x, hit.point.z)) <= placementRange)
 									{
-												Administrator.Instance.PlaceTower(hit.point);
+												Administrator.Instance.PlaceTower(hit.point, new Vector3(0f, yRotationEuler, 0f));
+												yRotationEuler = 0f;
 												RemovePreview();
 									}
 						}
