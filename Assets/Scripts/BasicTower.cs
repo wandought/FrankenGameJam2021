@@ -6,6 +6,8 @@ public class BasicTower : MonoBehaviour
 {
     public float degreesPerSecond = 0f;
 
+    public int damagePerBullet = 5;
+
     private GameObject towerHead;
 
     // Start is called before the first frame update
