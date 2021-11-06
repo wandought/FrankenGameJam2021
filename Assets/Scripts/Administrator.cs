@@ -51,7 +51,7 @@ public class Administrator : MonoBehaviour
         }
     }
 
-    public bool PlaceTower(Vector3 position)
+    public bool PlaceTower(Vector3 position, Vector3 rotation)
     {
         int x = Mathf.RoundToInt(position.x / 10);
         int z = Mathf.RoundToInt(position.z / 10);
@@ -68,7 +68,7 @@ public class Administrator : MonoBehaviour
         tile.IsPlaceable = false;
         GameObject tower = Instantiate(towerSelection.CurrentTower,
             new Vector3(x, position.y, z),
-            Quaternion.identity,
+            Quaternion.Euler(rotation.x, rotation.y, rotation.z),
             runtimeParent);
 
         towers.Add(key, tower.GetComponent<BasicTower>());

@@ -42,29 +42,3 @@ public class TowerSelection : MonoBehaviour
 									}
 			}
 }
-
-/*
- * 
-	*  public delegate void HealthChangedDelegate(float oldV, float newV);
-  public event HealthChangedDelegate HealthChangedEvent;
-
-
-Invoke:
-  //Code
-  HealthChangedEvent(oldV, newV);
-  //Code
-
-Listen:
-  //Code
-  HealthChangedEvent += new HealthChangedDelegate(<method to be Invoked>);
-  //Code
-
-  private void onDeath(float oldV, float newV);
-  {
-  // DO STUFF
-  }
-
-	* 
-	* 
-	* 
- * */
