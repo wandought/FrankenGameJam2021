@@ -9,6 +9,8 @@ public class TowerPlacement : MonoBehaviour
     [SerializeField] private float placementRange = 20f;
     private GameObject previewTower = null;
 
+    private CreditsAccount account;
+
     private bool placementMode = false;
 
 
@@ -25,6 +27,7 @@ public class TowerPlacement : MonoBehaviour
 
     private void Start()
     {
+        account = GetComponent<CreditsAccount>();
         TowerSelection.CurTowerChangedEvent += new TowerSelection.CurTowerChangedDelegate(updateMesh);
     }
 
@@ -44,8 +47,12 @@ public class TowerPlacement : MonoBehaviour
         }
         else if (placementMode && Input.GetMouseButtonDown(0))
         {
-            
-            PlaceTower();
+            // TODO Calculate correct cost
+            if (account.HasSufficientBalance(500))
+            {
+                account.Pay(500);
+                PlaceTower();
+            }
         }
 
         if (placementMode)
