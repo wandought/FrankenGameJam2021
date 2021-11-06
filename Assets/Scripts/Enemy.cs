@@ -29,6 +29,12 @@ public class Enemy : MonoBehaviour
 
     private void OnEnable()
     {
-        StartCoroutine(Move());
+						transform.position = Path.Instance.First.position;
+					 this.GetComponent<Health>().ResetHealth();
+						StartCoroutine(Move());
     }
+			private void OnDisable()
+			{
+						StopCoroutine(Move());
+			}
 }
