@@ -133,7 +133,7 @@ public class TowerPlacement : MonoBehaviour
 									x *= 10;
 									z *= 10;
 
-									previewTower = Instantiate(Administrator.Instance.towerSelection.CurrentTower, new Vector3(x, hit.point.y, z), Quaternion.Euler(rotation.x, rotation.y, rotation.z), null);
+									previewTower = Instantiate(Administrator.Instance.towerSelection.CurrentTower, new Vector3(x, hit.point.y, z), Quaternion.Euler(0f, yRotationEuler, 0f), null);
 
 									foreach (Transform item in previewTower.transform.Find("TowerHead")) // < bad
 									{
