@@ -9,7 +9,6 @@ public class Administrator : MonoBehaviour
     private static Administrator instance;
     public static Administrator Instance { get { return instance; } }
     public static float GridSize { get { return 0.25f; } }
-    public static float TileSize { get { return 10f; } }
 
     [SerializeField] private Transform runtimeParent;
 

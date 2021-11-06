@@ -26242,8 +26242,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   towers:
-  - {fileID: 6671632596985606489, guid: bf1f55b04612b994f8e3293ce49bff7a, type: 3}
-  - {fileID: 919132149155446097, guid: 2754176b635779a4fbc44c6840ab56f8, type: 3}
+  - {fileID: 1203748264908280329, guid: 1ec95caa470ad4a46b435ab1e5c98d89, type: 3}
+  - {fileID: 5245537096263922122, guid: 80031562d7690484b8d50a4172f47b19, type: 3}
+  - {fileID: 1564983890503249835, guid: fb545e3ac9975774aba5b097e2c475bf, type: 3}
+  - {fileID: 153255578302539355, guid: b21f833a13c0cb54bbbfa43643fa3209, type: 3}
+  - {fileID: 6786330626285376587, guid: bd5f0451449400a4b8778f9f124ea852, type: 3}
 --- !u!114 &2080300048
 MonoBehaviour:
   m_ObjectHideFlags: 0
