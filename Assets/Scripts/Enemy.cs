@@ -5,9 +5,9 @@ using UnityEngine;
 [RequireComponent(typeof(Health))]
 public class Enemy : MonoBehaviour
 {
+    [SerializeField] private float speed = 2f;
     private Health health;
     public float Health { get { return health.CurrentHealth; } }
-    private float speed = 2f;
 
     private void Awake()
     {
