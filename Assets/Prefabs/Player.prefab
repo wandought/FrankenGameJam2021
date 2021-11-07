@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 6174974310750670089}
   - component: {fileID: 1112337295726782923}
   m_Layer: 0
-  m_Name: TestPlayer
+  m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -225,15 +225,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2952802533638253028, guid: da0c14507e9c53e48849e21ab64e23e3, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.075
+      value: 0.13
       objectReference: {fileID: 0}
     - target: {fileID: 2952802533638253028, guid: da0c14507e9c53e48849e21ab64e23e3, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.075
+      value: 0.13
       objectReference: {fileID: 0}
     - target: {fileID: 2952802533638253028, guid: da0c14507e9c53e48849e21ab64e23e3, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.075
+      value: 0.13
       objectReference: {fileID: 0}
     - target: {fileID: 2952802533638253028, guid: da0c14507e9c53e48849e21ab64e23e3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -342,7 +342,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1839304754744059133, guid: cc2904f8420d54e45b80616562ff859c, type: 3}
       propertyPath: m_Name
-      value: FreeLichPolyart
+      value: Model
       objectReference: {fileID: 0}
     - target: {fileID: 3478025250975259355, guid: cc2904f8420d54e45b80616562ff859c, type: 3}
       propertyPath: m_RootOrder
