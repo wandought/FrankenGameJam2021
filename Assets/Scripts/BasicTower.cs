@@ -12,8 +12,13 @@ public class BasicTower : MonoBehaviour
 
     private GameObject towerHead;
 
-    // Start is called before the first frame update
-    void Start()
+			private void Awake()
+			{
+						this.transform.position = new Vector3(this.transform.position.x, 0f, this.transform.position.z);
+			}
+
+			// Start is called before the first frame update
+			void Start()
     {
         this.towerHead = this.transform.Find("TowerHead").gameObject;
     }

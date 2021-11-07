@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6546749567821002374}
   - component: {fileID: -876529344710254540}
+  - component: {fileID: 3333683316823768235}
   m_Layer: 0
   m_Name: SingleShooterTwoWay
   m_TagString: Untagged
@@ -45,7 +46,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2cb65d7514b2424ab80578dc98361cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  degreesPerSecond: 0
+  DegreesPerSecond: 0
+  DamagePerBullet: 5
+  Price: 350
+--- !u!65 &3333683316823768235
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5245537096263922122}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10, y: 20, z: 10}
+  m_Center: {x: 0, y: 5, z: 0}
 --- !u!1001 &2128455758909208775
 PrefabInstance:
   m_ObjectHideFlags: 0

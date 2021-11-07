@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7054792965124198539}
   - component: {fileID: 9221420544689471386}
+  - component: {fileID: 6796942228122011753}
   m_Layer: 0
   m_Name: FlameThrowerBasic
   m_TagString: Untagged
@@ -48,6 +49,20 @@ MonoBehaviour:
   DegreesPerSecond: 30
   DamagePerBullet: 0.1
   Price: 350
+--- !u!136 &6796942228122011753
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1061948296774527225}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 6
+  m_Height: 21.9
+  m_Direction: 1
+  m_Center: {x: 0, y: 12.4, z: 0}
 --- !u!1001 &3176219250317379957
 PrefabInstance:
   m_ObjectHideFlags: 0

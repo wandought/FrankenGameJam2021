@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1058612625019028912}
   - component: {fileID: 5759214287230976068}
+  - component: {fileID: 4753501569314114535}
   m_Layer: 0
   m_Name: StarShooterBasic
   m_TagString: Untagged
@@ -45,7 +46,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2cb65d7514b2424ab80578dc98361cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  degreesPerSecond: 0
+  DegreesPerSecond: 0
+  DamagePerBullet: 5
+  Price: 350
+--- !u!136 &4753501569314114535
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1564983890503249835}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 4.3
+  m_Height: 22.9
+  m_Direction: 1
+  m_Center: {x: 0, y: 6, z: 0}
 --- !u!1001 &1833321438366974179
 PrefabInstance:
   m_ObjectHideFlags: 0
