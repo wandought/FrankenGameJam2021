@@ -20,6 +20,7 @@ public class CreditsAccount : MonoBehaviour
         Debug.Log(display);
 
         OnBalanceUpdate.AddListener(updateBalanceDisplay);
+        OnBalanceUpdate.Invoke(currentBalance);
     }
 
     private void updateBalanceDisplay(int newBalance)
