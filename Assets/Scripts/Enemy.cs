@@ -6,7 +6,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     private Health health;
-    public int Health { get { return health.CurrentHealth; } }
+    public float Health { get { return health.CurrentHealth; } }
     private float speed = 2f;
 
     private void Start()

@@ -45,8 +45,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2cb65d7514b2424ab80578dc98361cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  degreesPerSecond: 30
-  damagePerBullet: 2
+  DegreesPerSecond: 30
+  DamagePerBullet: 0.1
+  Price: 350
 --- !u!1001 &3176219250317379957
 PrefabInstance:
   m_ObjectHideFlags: 0

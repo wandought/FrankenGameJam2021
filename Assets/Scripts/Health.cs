@@ -5,11 +5,11 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
 	[SerializeField] private HealthBar healthBar;
-    [SerializeField] private int maxHealth = 25;
-    public int MaxHealth { get { return maxHealth; } }
+    [SerializeField] private float maxHealth = 25;
+    public float MaxHealth { get { return maxHealth; } }
 
-    private int currentHealth;
-    public int CurrentHealth { get { return currentHealth; } }
+    private float currentHealth;
+    public float CurrentHealth { get { return currentHealth; } }
 
 	private CreditsAccount account;
 
@@ -21,7 +21,7 @@ public class Health : MonoBehaviour
         healthBar.SetMaxHealth(maxHealth);
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         if (damage < 0)
             damage = Mathf.Abs(damage);
@@ -46,7 +46,7 @@ public class Health : MonoBehaviour
         ResetHealth();
     }
 
-    private void GainHealth(int amount)
+    private void GainHealth(float amount)
     {
         if (amount < 0)
             amount = Mathf.Abs(amount);

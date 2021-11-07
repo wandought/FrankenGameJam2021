@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
     public static Player Instance { get { return instance; } }
 
     private Health health;
-    public int Health { get { return health.CurrentHealth; }
+    public float Health { get { return health.CurrentHealth; }
         set { if (value < 0) value = 0;
             if (value > health.MaxHealth) value = health.MaxHealth;
             health.ResetHealth();
@@ -41,7 +41,7 @@ public class Player : MonoBehaviour
     {
 		BasicTower attackingTower = other.transform.parent.parent.GetComponent<BasicTower>();
 
-        int damageToTake = attackingTower.DamagePerBullet;
+        float damageToTake = attackingTower.DamagePerBullet;
 		Debug.Log("Taking " + damageToTake + " damage... ouwie wouwie :(");
 		health.TakeDamage(damageToTake);
     }

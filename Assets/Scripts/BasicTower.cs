@@ -6,7 +6,7 @@ public class BasicTower : MonoBehaviour
 {
     public float DegreesPerSecond = 0f;
 
-    public int DamagePerBullet = 5;
+    public float DamagePerBullet = 5;
 
     public int Price = 350;
 
