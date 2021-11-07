@@ -81,7 +81,7 @@ public class Health : MonoBehaviour
 
     private void OnParticleCollision(GameObject other)
     {
-        if (other.GetComponent<PlayerController>() != null)
+        if (other.transform.parent.GetComponent<PlayerController>() != null)
             TakeDamage(3);
         else
             TakeDamage(other.transform.parent.parent.GetComponent<BasicTower>().DamagePerBullet);
