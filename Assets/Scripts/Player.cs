@@ -14,7 +14,6 @@ public class Player : MonoBehaviour
             if (value > health.MaxHealth) value = health.MaxHealth;
             health.ResetHealth();
             health.TakeDamage(health.MaxHealth - value); } } //Sets health to value
-    public HealthBar healthBar;
 
     private void Awake()
     {
