@@ -5,13 +5,16 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerController : MonoBehaviour
 {
-	[SerializeReference] private float movementSpeed = 10f;
-	[SerializeReference] private float rotationRate = 4.5f;
+	[SerializeField] private float movementSpeed = 10f;
+	[SerializeField] private float rotationRate = 4.5f;
+	[SerializeField] private float attackCooldown = 5f;
+	[SerializeField] private ParticleSystem magic; 
 
 	private TowerPlacement towerPlacement;
 	private Rigidbody rb;
 	private Vector3 moveInput;
 	private bool moving = false;
+	private float lastActivation = 0f;
 
     private void Start()
     {
@@ -32,6 +35,15 @@ public class PlayerController : MonoBehaviour
 
 		if (Input.GetKeyDown(KeyCode.R))
 			WaveManager.Instance.SetReady();
+
+		if (Input.GetKeyDown(KeyCode.Space))
+        {
+			if (Time.time - lastActivation > attackCooldown)
+			{
+				magic.Play();
+				lastActivation = Time.time;
+			}
+        }
 	}
 
     private void FixedUpdate()
