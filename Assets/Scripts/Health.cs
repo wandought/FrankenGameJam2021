@@ -11,12 +11,9 @@ public class Health : MonoBehaviour
     private float currentHealth;
     public float CurrentHealth { get { return currentHealth; } }
 
-	private CreditsAccount account;
-
     // Start is called before the first frame update
     void Start()
     {
-		account = Administrator.Instance.GetComponent<CreditsAccount>();
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
     }
@@ -59,7 +56,8 @@ public class Health : MonoBehaviour
     {
 		if (gameObject.tag != "Player")
 		{
-			
+            int bounty = gameObject.GetComponent<Enemy>().Bounty;
+			Administrator.Instance.CreditsAccount.Earn(bounty);
 		}
         // TODO Display defeat UI
 
