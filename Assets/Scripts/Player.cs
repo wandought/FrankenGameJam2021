@@ -28,14 +28,6 @@ public class Player : MonoBehaviour
         health = GetComponent<Health>();
     }
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            health.TakeDamage(20);
-        }
-    }
-
     private void OnParticleCollision(GameObject other)
     {
 		BasicTower attackingTower = other.transform.parent.parent.GetComponent<BasicTower>();
