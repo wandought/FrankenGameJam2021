@@ -4,70 +4,84 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-	[SerializeField] private HealthBar healthBar;
-    [SerializeField] private float maxHealth = 25;
-    public float MaxHealth { get { return maxHealth; } }
+			[SerializeField] private HealthBar healthBar;
+			[SerializeField] private float maxHealth = 25;
+			public float MaxHealth { get { return maxHealth; } }
 
-    private float currentHealth;
-    public float CurrentHealth { get { return currentHealth; } }
+			private float currentHealth;
+			public float CurrentHealth { get { return currentHealth; } }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        currentHealth = maxHealth;
-        healthBar.SetMaxHealth(maxHealth);
-    }
+			private GameObject canvas;
+			private void Awake()
+			{
+						if (gameObject.tag == "Player")
+						{
+									canvas =	GameObject.FindWithTag("Canvas");
+									canvas.SetActive(false);
+						}
+			}
 
-    public void TakeDamage(float damage)
-    {
-        if (damage < 0)
-            damage = Mathf.Abs(damage);
+			// Start is called before the first frame update
+			void Start()
+			{
+						currentHealth = maxHealth;
+						healthBar.SetMaxHealth(maxHealth);
+			}
 
-        currentHealth -= damage;
+			public void TakeDamage(float damage)
+			{
+						if (damage < 0)
+									damage = Mathf.Abs(damage);
 
-        if (currentHealth <= 0)
-            Die();
+						currentHealth -= damage;
 
-        healthBar.SetHealth(currentHealth);
-    }
+						if (currentHealth <= 0)
+									Die();
 
-    public void ResetHealth()
-    {
-        currentHealth = maxHealth;
-        healthBar.SetMaxHealth(maxHealth);
-        healthBar.SetHealth(currentHealth);
-    }
+						healthBar.SetHealth(currentHealth);
+			}
 
-    private void OnEnable()
-    {
-        ResetHealth();
-    }
+			public void ResetHealth()
+			{
+						currentHealth = maxHealth;
+						healthBar.SetMaxHealth(maxHealth);
+						healthBar.SetHealth(currentHealth);
+			}
 
-    private void GainHealth(float amount)
-    {
-        if (amount < 0)
-            amount = Mathf.Abs(amount);
+			private void OnEnable()
+			{
+						ResetHealth();
+			}
 
-        currentHealth = (currentHealth + amount) % (maxHealth + 1);
-        healthBar.SetHealth(currentHealth);
-    }
+			private void GainHealth(float amount)
+			{
+						if (amount < 0)
+									amount = Mathf.Abs(amount);
 
-    void Die()
-    {
-		if (gameObject.tag != "Player")
-		{
-            int bounty = gameObject.GetComponent<Enemy>().Bounty;
-			Administrator.Instance.CreditsAccount.Earn(bounty);
-		}
-        // TODO Display defeat UI
+						currentHealth = (currentHealth + amount) % (maxHealth + 1);
+						healthBar.SetHealth(currentHealth);
+			}
 
-        //remove after defeat UI is implemented
-        gameObject.SetActive(false);
-    }
+			void Die()
+			{
+						if (gameObject.tag != "Player")
+						{
+									int bounty = gameObject.GetComponent<Enemy>().Bounty;
+									Administrator.Instance.CreditsAccount.Earn(bounty);
+						}
+						else
+						{
+									Debug.Log("Activating Canvas");
+									canvas.SetActive(true);
+						}
 
-    private void OnParticleCollision(GameObject other)
-    {
-        TakeDamage(other.transform.parent.parent.GetComponent<BasicTower>().DamagePerBullet);
-    }
+						//remove after defeat UI is implemented
+						gameObject.SetActive(false);
+			}
+
+			private void OnParticleCollision(GameObject other)
+			{
+						TakeDamage(other.transform.parent.parent.GetComponent<BasicTower>().DamagePerBullet);
+			}
 
 }
