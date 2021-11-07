@@ -9,7 +9,7 @@ public class Enemy : MonoBehaviour
     public float Health { get { return health.CurrentHealth; } }
     private float speed = 2f;
 
-    private void Start()
+    private void Awake()
     {
         health = GetComponent<Health>();
     }
@@ -38,7 +38,7 @@ public class Enemy : MonoBehaviour
     private void OnEnable()
     {
         transform.position = Path.Instance.First.position;
-        this.GetComponent<Health>().ResetHealth();
+        health.ResetHealth();
         StartCoroutine(Move());
     }
 

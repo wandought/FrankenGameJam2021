@@ -82,8 +82,11 @@ MonoBehaviour:
   enemyTypes:
   - {fileID: 8660296937213827675, guid: ada538eb2eba4124692acf9bdabb008a, type: 3}
   - {fileID: 62779306198612430, guid: da4b93d0b29f38540bd8ea0798c7a139, type: 3}
-  enemyCounts: 0a0000000200000014000000
-  enemySpawnDelay: 1
+  waveComposition:
+  - list: 010000
+  - list: 0000000000
+  - list: 01
+  enemySpawnDelay: 0.5
 --- !u!114 &8286186949645407196
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -169,4 +172,4 @@ MonoBehaviour:
   OnBalanceUpdate:
     m_PersistentCalls:
       m_Calls: []
-  currentBalance: 0
+  currentBalance: 999

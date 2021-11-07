@@ -63,7 +63,6 @@ public class TowerPlacement : MonoBehaviour
 
     private void updateMesh(GameObject curTower)
     {
-        Debug.Log("Trying to update mesh");
         if (placementMode)
         {
             Destroy(previewTower);
@@ -112,9 +111,7 @@ public class TowerPlacement : MonoBehaviour
 
     private void DisplayPreview()
     {
-        Debug.Log("Placement Mode on");
         placementMode = true;
-        //TODO
 
         Vector2 playerPosition = new Vector2(transform.position.x, transform.position.z);
         Vector2 mousePosition = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
@@ -158,7 +155,6 @@ public class TowerPlacement : MonoBehaviour
 
     private void RemovePreview()
     {
-        Debug.Log("Placement Mode off");
         placementMode = false;
         Destroy(previewTower);
         yRotationEuler = 0f;
