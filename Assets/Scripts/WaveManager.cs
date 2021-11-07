@@ -74,7 +74,6 @@ public class WaveManager : MonoBehaviour
 
     private IEnumerator TriggerWave()
     {
-        Debug.Log("starting a wave");
         if (nextWave < enemyCounts.Count)
         {
             stillSpawning = true;
