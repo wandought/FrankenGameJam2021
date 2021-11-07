@@ -112,7 +112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93491cb09c5626b478df4a3b7a68aedb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  placementRange: 40
+  placementRange: 25
   towerCanBePlaced: {fileID: 2100000, guid: 53206e5af24353948bd840815d31f099, type: 2}
   towerCanNotBePlaced: {fileID: 2100000, guid: 0699511f3e378ad44adbd4ef39a850f7, type: 2}
 --- !u!114 &2907634562393606266
@@ -153,8 +153,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dabe1af8b70a75489f141ce67692e8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 25
   healthBar: {fileID: 8901539041908770671}
+  maxHealth: 25
 --- !u!1001 &9115712188019480414
 PrefabInstance:
   m_ObjectHideFlags: 0

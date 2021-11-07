@@ -147,7 +147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db7040d9a13653d4f894a955aa265da8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentBalanceAsText: {fileID: 0}
+  currentBalance: {fileID: 0}
 --- !u!1001 &3311107982575983028
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -241,7 +241,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 362853580564557906, guid: 466f2f15921d7d74093fc99835de6646, type: 3}
       propertyPath: m_PresetInfoIsWorld
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 362853580564557907, guid: 466f2f15921d7d74093fc99835de6646, type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
