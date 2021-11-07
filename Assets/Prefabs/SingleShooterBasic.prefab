@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8517555417590206972}
   - component: {fileID: 4365002412036395737}
+  - component: {fileID: 5060318085147947012}
   m_Layer: 0
   m_Name: SingleShooterBasic
   m_TagString: Untagged
@@ -45,8 +46,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2cb65d7514b2424ab80578dc98361cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  degreesPerSecond: 0
-  damagePerBullet: 5
+  DegreesPerSecond: 0
+  DamagePerBullet: 5
+  Price: 350
+--- !u!65 &5060318085147947012
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1203748264908280329}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10, y: 20, z: 10}
+  m_Center: {x: 0, y: 5, z: 0}
 --- !u!1001 &899817108879354364
 PrefabInstance:
   m_ObjectHideFlags: 0

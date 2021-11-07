@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2458879893823824462}
   - component: {fileID: 4929515461677954820}
+  - component: {fileID: 4887855189733197747}
   m_Layer: 0
   m_Name: TwinShooterRotating
   m_TagString: Untagged
@@ -45,7 +46,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2cb65d7514b2424ab80578dc98361cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  degreesPerSecond: 30
+  DegreesPerSecond: 0
+  DamagePerBullet: 5
+  Price: 350
+--- !u!136 &4887855189733197747
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6786330626285376587}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 5.36
+  m_Height: 24.17
+  m_Direction: 1
+  m_Center: {x: 0, y: 4.58, z: 0}
 --- !u!1001 &601414251550065849
 PrefabInstance:
   m_ObjectHideFlags: 0
