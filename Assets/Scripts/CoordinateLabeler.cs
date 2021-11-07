@@ -43,8 +43,8 @@ public class CoordinateLabeler : MonoBehaviour {
 
     private void DisplayCoordinates()
     {
-        coord.x = Mathf.RoundToInt(transform.parent.position.x / Administrator.GridSize);
-        coord.y = Mathf.RoundToInt(transform.parent.position.z / Administrator.GridSize);
+        coord.x = Mathf.RoundToInt(transform.parent.position.x / 10);
+        coord.y = Mathf.RoundToInt(transform.parent.position.z / 10);
 
         label.text = $"({coord.x}, {coord.y})";
     }

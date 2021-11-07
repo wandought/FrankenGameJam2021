@@ -290,7 +290,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 16d045a83d814444ca30f8b48a0fcdf4, type: 2}
+  - {fileID: 2100000, guid: ed9efc7122d9f8847bee84d58bb0907a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -337,5 +337,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bae377191ddd46442902829517b08929, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sand: {fileID: 2100000, guid: 16d045a83d814444ca30f8b48a0fcdf4, type: 2}
-  dirt: {fileID: 2100000, guid: d0ea33217e763b44398c0b35c1cd3393, type: 2}
+  sand: {fileID: 2100000, guid: ed9efc7122d9f8847bee84d58bb0907a, type: 2}
+  dirt: {fileID: 2100000, guid: 3a665be88a86e9d4e8e4ffc775938098, type: 2}

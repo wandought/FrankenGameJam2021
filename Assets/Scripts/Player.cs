@@ -10,7 +10,10 @@ public class Player : MonoBehaviour
 
     private Health health;
     public int Health { get { return health.CurrentHealth; }
-        set { health.TakeDamage(value - health.MaxHealth);/*health.TakeDamage(health.MaxHealth - value);*/ } }
+        set { if (value < 0) value = 0;
+            if (value > health.MaxHealth) value = health.MaxHealth;
+            health.ResetHealth();
+            health.TakeDamage(health.MaxHealth - value); } } //Sets health to value
     public HealthBar healthBar;
 
     private void Awake()

@@ -52,6 +52,7 @@ public class Health : MonoBehaviour
             amount = Mathf.Abs(amount);
 
         currentHealth = (currentHealth + amount) % (maxHealth + 1);
+        healthBar.SetHealth(currentHealth);
     }
 
     void Die()

@@ -13,6 +13,11 @@ public class WaveManager : MonoBehaviour
     [SerializeField] private float enemySpawnDelay = 1f;
     private Enemy[] wave;
     private int nextWave = 0;
+			public int NextWave
+			{
+						get { return nextWave; }
+						private set { nextWave = value; }
+			}
 
     private bool stillSpawning = false;
     private bool ready = false;
@@ -74,7 +79,6 @@ public class WaveManager : MonoBehaviour
 
     private IEnumerator TriggerWave()
     {
-        Debug.Log("starting a wave");
         if (nextWave < enemyCounts.Count)
         {
             stillSpawning = true;

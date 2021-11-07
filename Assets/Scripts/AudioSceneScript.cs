@@ -9,7 +9,7 @@ public class AudioSceneScript : MonoBehaviour
 			[SerializeField] private AudioSource audioSource;
 			[SerializeField] private AudioClip[] loops;
 			[SerializeField, Tooltip("Has to be the same size as 'loops' and the last entry has to be unreachable(999)")] private int[] loopChangeAtWave;
-			public int counter = 0;
+			[SerializeField] private int counter = 0;
 			public int waveNr = 0;
 
 			private void Awake()
@@ -33,6 +33,7 @@ public class AudioSceneScript : MonoBehaviour
 			// Update is called once per frame
 			void Update()
 			{
+						waveNr = WaveManager.Instance.NextWave;
 						if (waveNr >= loopChangeAtWave[counter])
 						{
 									counter++;
