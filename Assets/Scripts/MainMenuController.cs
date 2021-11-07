@@ -25,6 +25,11 @@ public class MainMenuController : MonoBehaviour
 	  instructionsPage.SetActive(false);
    }
 
+   public void OnBackToMenuButtonPressed()
+   {
+	  SceneManager.LoadScene(0);
+   }
+
    public void OnExitButtonPressed()
    {
 	  Application.Quit();
