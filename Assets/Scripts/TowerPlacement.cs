@@ -128,6 +128,8 @@ public class TowerPlacement : MonoBehaviour
                 Quaternion.Euler(0f, yRotationEuler, 0f),
                 Administrator.Instance.RuntimeParent);
 
+									previewTower.GetComponent<Collider>().enabled = false;
+
             foreach (Transform item in previewTower.transform.Find("TowerHead")) // < bad
             {
                 item.GetComponent<ParticleSystem>().Stop();
