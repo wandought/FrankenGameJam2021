@@ -261,6 +261,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bf447c6b41a20a46adc9f97fcb96b9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Bounty: 20
   speed: 3.7
 --- !u!114 &9165969702686815102
 MonoBehaviour:

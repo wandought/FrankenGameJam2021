@@ -47,8 +47,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DegreesPerSecond: 0
-  DamagePerBullet: 5
-  Price: 350
+  DamagePerBullet: 10
+  Price: 420
 --- !u!136 &4753501569314114535
 CapsuleCollider:
   m_ObjectHideFlags: 0

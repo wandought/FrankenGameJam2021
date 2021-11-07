@@ -47,8 +47,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DegreesPerSecond: 30
-  DamagePerBullet: 0.1
-  Price: 350
+  DamagePerBullet: 0.2
+  Price: 300
 --- !u!136 &6796942228122011753
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -280,11 +280,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6606149022708204523, guid: 7f727828d5eec5f4eafacac64231ab6e, type: 3}
       propertyPath: InitialModule.startSpeed.scalar
-      value: 2.2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6606149022708204523, guid: 7f727828d5eec5f4eafacac64231ab6e, type: 3}
       propertyPath: EmissionModule.rateOverTime.scalar
-      value: 100
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 6606149022708204523, guid: 7f727828d5eec5f4eafacac64231ab6e, type: 3}
       propertyPath: InitialModule.startLifetime.scalar

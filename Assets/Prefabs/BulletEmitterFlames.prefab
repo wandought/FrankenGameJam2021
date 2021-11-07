@@ -60,6 +60,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 289301614986012343, guid: f6ef5b0fe9d3b4b4eb5fb9fa1c67161c, type: 3}
     - target: {fileID: 6996403038449115895, guid: 0cb79948618947847a6322db4ac4b738, type: 3}
+      propertyPath: lengthInSec
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6996403038449115895, guid: 0cb79948618947847a6322db4ac4b738, type: 3}
       propertyPath: ShapeModule.alignToDirection
       value: 1
       objectReference: {fileID: 0}

@@ -172,4 +172,4 @@ MonoBehaviour:
   OnBalanceUpdate:
     m_PersistentCalls:
       m_Calls: []
-  currentBalance: 999
+  currentBalance: 720

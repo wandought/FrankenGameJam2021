@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2cb65d7514b2424ab80578dc98361cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DegreesPerSecond: 0
+  DegreesPerSecond: 30
   DamagePerBullet: 5
   Price: 350
 --- !u!136 &4887855189733197747

@@ -1328,7 +1328,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7648332745826474825, guid: 0dc2fdb4a67d6024cb1d6e5d77418aa2, type: 3}
       propertyPath: currentBalance
-      value: 400
+      value: 720
       objectReference: {fileID: 0}
     - target: {fileID: 8286186949645407168, guid: 0dc2fdb4a67d6024cb1d6e5d77418aa2, type: 3}
       propertyPath: m_RootOrder
