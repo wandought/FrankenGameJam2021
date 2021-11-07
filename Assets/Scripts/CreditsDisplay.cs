@@ -4,16 +4,11 @@ using TMPro;
 
 public class CreditsDisplay : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI currentBalance;
-
-    public void Start()
-    {
-        currentBalance = GetComponent<TMPro.TextMeshProUGUI>();
-    }
+    [SerializeField] private TextMeshProUGUI currentBalanceText;
 
     public void HandleOnBalanceUpdateEvent(int newBalance)
     {
-        currentBalance.text = String.Format("Balance: ₡{0}", newBalance);
+        currentBalanceText.text = String.Format("Balance: ₡{0}", newBalance);
     }
 
 }

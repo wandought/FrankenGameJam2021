@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class BasicTower : MonoBehaviour
 {
-    public float degreesPerSecond = 0f;
+    public float DegreesPerSecond = 0f;
 
-    public int damagePerBullet = 5;
+    public int DamagePerBullet = 5;
 
-    public int price = 350;
+    public int Price = 350;
 
     private GameObject towerHead;
 
@@ -21,7 +21,7 @@ public class BasicTower : MonoBehaviour
     // Update is called once per frame
     void Update()   
     {
-        this.towerHead.transform.Rotate(0, degreesPerSecond * Time.deltaTime, 0, Space.World);
+        this.towerHead.transform.Rotate(0, DegreesPerSecond * Time.deltaTime, 0, Space.World);
     }
 }
 

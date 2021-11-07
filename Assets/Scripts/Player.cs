@@ -38,7 +38,7 @@ public class Player : MonoBehaviour
     {
 		BasicTower attackingTower = other.transform.parent.parent.GetComponent<BasicTower>();
 
-        int damageToTake = attackingTower.damagePerBullet;
+        int damageToTake = attackingTower.DamagePerBullet;
 		Debug.Log("Taking " + damageToTake + " damage... ouwie wouwie :(");
 		health.TakeDamage(damageToTake);
     }

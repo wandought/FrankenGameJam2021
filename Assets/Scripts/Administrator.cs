@@ -15,6 +15,11 @@ public class Administrator : MonoBehaviour
 
     private TowerSelection towerSelection;
     public TowerSelection TowerSelection { get { return towerSelection; } }
+
+    private CreditsAccount creditsAccount;
+    public CreditsAccount CreditsAccount { get { return creditsAccount; } }
+
+
     private Dictionary<int, Waypoint> waypoints;
     public Dictionary<int, Waypoint> Waypoints { get { return waypoints; } }
     private Dictionary<int, BasicTower> towers;
@@ -30,6 +35,8 @@ public class Administrator : MonoBehaviour
     private void Start()
     {
         towerSelection = GetComponent<TowerSelection>();
+        creditsAccount = GetComponent<CreditsAccount>();
+
         waypoints = new Dictionary<int, Waypoint>();
         towers = new Dictionary<int, BasicTower>();
 
@@ -58,6 +65,13 @@ public class Administrator : MonoBehaviour
 
     public bool PlaceTower(Vector3 position, Vector3 rotation)
     {
+        int towerCost = towerSelection.CurrentTower.GetComponent<BasicTower>().Price;
+        if (!creditsAccount.HasSufficientBalance(towerCost))
+        {
+            Debug.Log("Could not place tower: Insufficient Funds");
+            return false;
+        }
+
         int x = Mathf.RoundToInt(position.x / 10);
         int z = Mathf.RoundToInt(position.z / 10);
 
@@ -75,6 +89,8 @@ public class Administrator : MonoBehaviour
             new Vector3(x, position.y, z),
             Quaternion.Euler(rotation.x, rotation.y, rotation.z),
             runtimeParent);
+        
+        creditsAccount.Pay(towerCost);
 
         towers.Add(key, tower.GetComponent<BasicTower>());
         return true;
@@ -94,6 +110,9 @@ public class Administrator : MonoBehaviour
         BasicTower tower;
         if (!towers.TryGetValue(key, out tower))
             return false;
+
+        // TODO maybe make this adjustable from inspector
+        creditsAccount.Earn((int)Math.Round(tower.Price * 0.7));
 
         Destroy(tower.gameObject);
         return towers.Remove(key);

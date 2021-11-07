@@ -4,17 +4,19 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    [SerializeField] private HealthBar healthBar;
+	[SerializeField] private HealthBar healthBar;
     [SerializeField] private int maxHealth = 25;
     public int MaxHealth { get { return maxHealth; } }
 
     private int currentHealth;
     public int CurrentHealth { get { return currentHealth; } }
 
+	private CreditsAccount account;
 
     // Start is called before the first frame update
     void Start()
     {
+		account = Administrator.Instance.GetComponent<CreditsAccount>();
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
     }
@@ -54,6 +56,10 @@ public class Health : MonoBehaviour
 
     void Die()
     {
+		if (gameObject.tag != "Player")
+		{
+			
+		}
         // TODO Display defeat UI
 
         //remove after defeat UI is implemented
@@ -62,7 +68,7 @@ public class Health : MonoBehaviour
 
     private void OnParticleCollision(GameObject other)
     {
-        TakeDamage(other.transform.parent.parent.GetComponent<BasicTower>().damagePerBullet);
+        TakeDamage(other.transform.parent.parent.GetComponent<BasicTower>().DamagePerBullet);
     }
 
 }

@@ -47,12 +47,7 @@ public class TowerPlacement : MonoBehaviour
         }
         else if (placementMode && Input.GetMouseButtonDown(0))
         {
-            // TODO Calculate correct cost
-            if (account.HasSufficientBalance(500))
-            {
-                account.Pay(500);
-                PlaceTower();
-            }
+            PlaceTower();
         }
 
         if (placementMode)
@@ -71,12 +66,8 @@ public class TowerPlacement : MonoBehaviour
         Debug.Log("Trying to update mesh");
         if (placementMode)
         {
-
             Destroy(previewTower);
             DisplayPreview();
-
-
-
         }
     }
 
