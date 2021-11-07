@@ -12,7 +12,7 @@ public class TowerPlacement : MonoBehaviour
     private CreditsAccount account;
 
     private bool placementMode = false;
-
+    public bool PlacementMode { get { return placementMode; } }
 
     // replacing materials is pretty fucky wucky
     [SerializeField] private Material towerCanBePlaced;
