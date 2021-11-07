@@ -42,6 +42,6 @@ public class CreditsAccount : MonoBehaviour
 
     public bool HasSufficientBalance(int amount)
     {
-        return currentBalance > amount;
+        return currentBalance >= amount;
     }
 }
