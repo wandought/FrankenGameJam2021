@@ -42,7 +42,7 @@ public static class HelperFunctions
 									string line;
 
 
-									while ((reader.ReadLine()) != null && lineNumber > 0)
+									while ((reader.ReadLine()) != null && lineNumber > 1)
 									{
 												lineNumber--;
 									}

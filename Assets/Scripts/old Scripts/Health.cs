@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Health : MonoBehaviour
 {
@@ -11,7 +12,9 @@ public class Health : MonoBehaviour
     private float currentHealth;
     public float CurrentHealth { get { return currentHealth; } }
 
-    private GameObject canvas;
+			public GamneObjectEvent m_DeathEvent;
+
+			private GameObject canvas;
     private void Awake()
     {
         if (gameObject.tag == "Player")
@@ -75,8 +78,16 @@ public class Health : MonoBehaviour
             canvas.SetActive(true);
         }
 
-        //remove after defeat UI is implemented
-        gameObject.SetActive(false);
+						if (gameObject.tag != "Player")
+						{
+									m_DeathEvent.Invoke(this.gameObject);
+									Destroy(this.gameObject);
+						}
+
+						//remove after defeat UI is implemented
+						gameObject.SetActive(false);
+
+					
     }
 
     private void OnParticleCollision(GameObject other)

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-[RequireComponent(typeof(TowerSelection))] [RequireComponent(typeof(WaveManager))] [RequireComponent(typeof(ApplicationQuit))]
+[RequireComponent(typeof(TowerSelection))] [RequireComponent(typeof(ApplicationQuit))]
 public class Administrator : MonoBehaviour
 {
     private static Administrator instance;

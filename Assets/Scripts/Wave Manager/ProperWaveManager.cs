@@ -9,6 +9,7 @@ public class ProperWaveManager : MonoBehaviour
 			[SerializeField] private TextAsset taWaves;
 			[SerializeField] private GameObject wavePrefab;
 			[SerializeField] private GameObject waveHolder;
+			public GameObject unitHolder;
 
 			public static ProperWaveManager instance;
 
@@ -16,7 +17,7 @@ public class ProperWaveManager : MonoBehaviour
 			public UnityEvent m_EndWaveEvent;
 
 			[SerializeField] private List<Wave> waves;
-			private int waveCounter = 0;
+			public int waveCounter = 0;
 
 			private void Awake()
 			{
@@ -41,7 +42,7 @@ public class ProperWaveManager : MonoBehaviour
 			// Start is called before the first frame update
 			void Start()
 			{
-
+						// Preloads all waves (not good with dozens, if not hundreds of waves)
 						SetupWaveList();
 
 
@@ -61,10 +62,9 @@ public class ProperWaveManager : MonoBehaviour
 
 									foreach (var item in line.Split(';'))
 									{
-												Debug.Log(item);
 												if (toggle)
 												{
-															Debug.Log("INT");
+															//Debug.Log("INT");
 															dummyWave.waveUnits.Add(new WaveSpawnUnit());
 															dummyWave.waveUnits[waveUnitCounter].unit = Convert.ToInt32(item);
 															toggle = false;
@@ -72,7 +72,7 @@ public class ProperWaveManager : MonoBehaviour
 												}
 												else
 												{
-															Debug.Log("FLOAT");
+															//Debug.Log("FLOAT");
 															dummyWave.waveUnits[waveUnitCounter].spawnTime = float.Parse(item);
 															toggle = true;
 															waveUnitCounter++;
@@ -89,16 +89,20 @@ public class ProperWaveManager : MonoBehaviour
 			// Update is called once per frame
 			void Update()
 			{
-						if (Input.GetKeyDown(KeyCode.R) || Input.GetKeyDown(KeyCode.Q))
+						if (Input.GetKeyDown(KeyCode.R))
 						{
 									Debug.Log("ProperWaveManager Registered R");
 
+									// Only needed with the other wave loading method
 									StartWave();
-									//StartNextWave();
+
+									// Only load the wave that needs to start | TODO: fix loading error
+								 //StartNextWave();
 
 						}
 			}
 
+			// Todo: creates empty wave elements when no more lines are ready
 			private void StartNextWave()
 			{
 						bool toggle = true;
@@ -118,7 +122,7 @@ public class ProperWaveManager : MonoBehaviour
 									Debug.Log(item);
 									if (toggle)
 									{
-												Debug.Log("INT");
+												//Debug.Log("INT");
 												nextWave.waveUnits.Add(new WaveSpawnUnit());
 												nextWave.waveUnits[waveUnitCounter].unit = Convert.ToInt32(item);
 												toggle = false;
@@ -126,7 +130,7 @@ public class ProperWaveManager : MonoBehaviour
 									}
 									else
 									{
-												Debug.Log("FLOAT");
+												//Debug.Log("FLOAT");
 												nextWave.waveUnits[waveUnitCounter].spawnTime = float.Parse(item);
 												toggle = true;
 												waveUnitCounter++;
@@ -142,8 +146,16 @@ public class ProperWaveManager : MonoBehaviour
 
 			private void StartWave()
 			{
-						waves[0].StartWave();
-						waves.RemoveAt(0);
+						if (waves.Count == 0 || waves == null)
+						{
+									Debug.Log("No more waves");
+									return;
+						}
+						else
+						{
+									waves[0].StartWave();
+									waves.RemoveAt(0);
+						}
 			}
 
 			private void EndWave()

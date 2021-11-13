@@ -76,8 +76,10 @@ public class Wave : MonoBehaviour
 
 						if (waveUnits[0].spawnTime <= 0f)
 						{
-									// TODO: PreInstatiate units to prevent lag. Overhault on units needed before implementation!!!
-									myUnits.Add( Instantiate(Units.instance.UnitPrefabs[waveUnits[0].unit], Vector3.zero, Quaternion.identity, null)  );
+									Debug.Log(ProperWaveManager.instance.unitHolder.transform);
+								 GameObject spawnedEnemy =	 Instantiate(Units.instance.UnitPrefabs[waveUnits[0].unit], Vector3.zero, Quaternion.identity, ProperWaveManager.instance.unitHolder.transform)  ;
+									myUnits.Add(spawnedEnemy);
+									spawnedEnemy.GetComponent<Health>().m_DeathEvent.AddListener(UnitDeath);
 									waveUnits.RemoveAt(0);
 									
 						}
@@ -91,6 +93,10 @@ public class Wave : MonoBehaviour
 
 			}
 
+			private void UnitDeath(GameObject unit)
+			{
+						myUnits.Remove(unit);
+			}
 
 			private void OnStartWave()
 			{
@@ -103,7 +109,7 @@ public class Wave : MonoBehaviour
 			{
 
 
-
+						Debug.Log("Ending wave");
 						Destroy(this.gameObject);
 			}
 
