@@ -6,15 +6,15 @@ using UnityEngine.Events;
 
 public class ProperWaveManager : MonoBehaviour
 {
-			[SerializeField] private TextAsset taWaves;
+			[SerializeField] private TextAsset taWaves; // Textdocument with all waves
 			[SerializeField] private GameObject wavePrefab;
-			[SerializeField] private GameObject waveHolder;
-			public GameObject unitHolder;
+			[SerializeField] private GameObject waveHolder; // Empty in Scene which will store the instantiated "wavePrefabs"
+			public GameObject unitHolder; // Empty in Scene which will store all units. Gets used by Wave.cs when instantiating Units
 
 			public static ProperWaveManager instance;
 
 			public UnityEvent m_StartWaveEvent;
-			public UnityEvent m_EndWaveEvent;
+			public UnityEvent m_EndWaveEvent; // Currently does not get invoked. Kind off useless when each wave has it's own Event when it ends
 
 			[SerializeField] private List<Wave> waves;
 			public int waveCounter = 0;
@@ -102,7 +102,7 @@ public class ProperWaveManager : MonoBehaviour
 						}
 			}
 
-			// Todo: creates empty wave elements when no more lines are ready
+			// Todo: creates empty wave elements when no more lines are ready, also skips wave 0, problem with "GetSpecificLine(int)"
 			private void StartNextWave()
 			{
 						bool toggle = true;
