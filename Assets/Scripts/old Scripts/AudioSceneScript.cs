@@ -33,8 +33,7 @@ public class AudioSceneScript : MonoBehaviour
 			// Update is called once per frame
 			void Update()
 			{
-						waveNr = ProperWaveManager.instance.waveCounter;
-						if (waveNr >= loopChangeAtWave[counter])
+						if (ProperWaveManager.instance.waveCounter >= loopChangeAtWave[counter])
 						{
 									counter++;
 									if (counter < loopChangeAtWave.Length)

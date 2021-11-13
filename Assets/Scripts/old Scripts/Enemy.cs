@@ -6,17 +6,15 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public int Bounty = 5;
-
     [SerializeField] private float speed = 2f;
-    private Health health;
-    public float Health { get { return health.CurrentHealth; } }
 
-    private void Awake()
-    {
-        health = GetComponent<Health>();
-    }
 
-    private IEnumerator Move()
+			private void Start()
+			{
+					StartCoroutine(Move());
+			}
+
+			private IEnumerator Move()
     {
         foreach (Transform trans in Path.Instance.GetPath())
         {
@@ -37,15 +35,8 @@ public class Enemy : MonoBehaviour
         transform.position = Path.Instance.First.position;
     }
 
-    private void OnEnable()
-    {
-        transform.position = Path.Instance.First.position;
-        health.ResetHealth();
-        StartCoroutine(Move());
-    }
-
-    private void OnDisable()
-    {
-        StopCoroutine(Move());
-    }
+			private void OnDestroy()
+			{
+						StopCoroutine(Move());
+			}
 }

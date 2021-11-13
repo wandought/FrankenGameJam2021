@@ -77,7 +77,7 @@ public class Wave : MonoBehaviour
 						if (waveUnits[0].spawnTime <= 0f)
 						{
 									Debug.Log(ProperWaveManager.instance.unitHolder.transform);
-								 GameObject spawnedEnemy =	 Instantiate(Units.instance.UnitPrefabs[waveUnits[0].unit], Vector3.zero, Quaternion.identity, ProperWaveManager.instance.unitHolder.transform)  ;
+								 GameObject spawnedEnemy =	 Instantiate(Units.instance.UnitPrefabs[waveUnits[0].unit], Path.Instance.First.transform.position, Quaternion.identity, ProperWaveManager.instance.unitHolder.transform)  ;
 									myUnits.Add(spawnedEnemy);
 									spawnedEnemy.GetComponent<Health>().m_DeathEvent.AddListener(UnitDeath);
 									waveUnits.RemoveAt(0);

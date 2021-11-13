@@ -33,8 +33,7 @@ public class PlayerController : MonoBehaviour
 						else
 									moving = true;
 
-						//if (Input.GetKeyDown(KeyCode.R))
-						//			WaveManager.Instance.SetReady();
+			
 
 						if (Input.GetKeyDown(KeyCode.Space))
 						{
@@ -69,9 +68,7 @@ public class PlayerController : MonoBehaviour
 									if (!moving)
 												return;
 
-									transform.rotation = Quaternion.Lerp(transform.rotation,
-										Quaternion.LookRotation(moveInput, Vector3.up),
-										Time.fixedDeltaTime * rotationRate);
+									transform.rotation = Quaternion.Lerp(transform.rotation,	Quaternion.LookRotation(moveInput, Vector3.up), Time.fixedDeltaTime * rotationRate);
 						}
 			}
 
