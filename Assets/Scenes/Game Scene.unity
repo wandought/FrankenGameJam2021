@@ -174,6 +174,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4435931232787220117, guid: c68c36427c7755d47b7377c38b891eaa, type: 3}
+      propertyPath: isPlacable
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4617835146345632725, guid: c68c36427c7755d47b7377c38b891eaa, type: 3}
       propertyPath: m_Name
       value: Board
@@ -405,6 +409,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4027910238217934017, guid: c68c36427c7755d47b7377c38b891eaa, type: 3}
   m_PrefabInstance: {fileID: 84051077}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &96367230 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 564935650490021003, guid: a1563d5d1cd216f4c89363fce3b84630, type: 3}
+  m_PrefabInstance: {fileID: 106674559}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &106674559
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -588,6 +597,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7782947043138638675, guid: e92ef58f2b5dd1f4ba568d243377d911, type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 96367230}
     - target: {fileID: 7782947043138638678, guid: e92ef58f2b5dd1f4ba568d243377d911, type: 3}
       propertyPath: m_TagString
       value: Canvas
